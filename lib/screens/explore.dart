@@ -84,19 +84,97 @@ class _ExploreScreenState extends State<ExploreScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          AnimSearchBar(
-            onSubmitted: (value) {},
-            width: 250,
-            textController: textController,
-            onSuffixTap: () {
-              setState(
-                () {
-                  textController.clear();
-                },
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.only(left: 15, right: 10),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AnimSearchBar(
+                      onSubmitted: (value) {},
+                      width: 310,
+                      textController: textController,
+                      onSuffixTap: () {
+                        setState(
+                          () {
+                            textController.clear();
+                          },
+                        );
+                      },
+                    ),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                  ],
+                ),
+                Stack(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 4),
+                          child: Container(
+                            height: 200,
+                            width: 330,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              boxShadow: kElevationToShadow[2],
+                            ),
+                            alignment: Alignment.topRight,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton.icon(
+                                      onPressed: () {},
+                                      icon: Icon(Icons.add, size: 15),
+                                      label: Text("INVITE"),
+                                    )
+                                  ],
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(left: 80),
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    children: [
+                                      Text('Nikhil Wipra Das'),
+                                      Text('Nikhil Wipra Das'),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(height: 30),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.blueGrey.shade200,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          
           Text('h1'),
           Text('h1'),
         ],
