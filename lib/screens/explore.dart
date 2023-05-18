@@ -26,6 +26,8 @@ class _ExploreScreenState extends State<ExploreScreen>
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         bottom: TabBar(
@@ -51,13 +53,13 @@ class _ExploreScreenState extends State<ExploreScreen>
             ),
           )
         ],
-        title: const Column(
+        title: Column(
           children: [
             Row(
               children: [
                 Text(
                   'Howdy Anupam Khosti !!',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
             ),
@@ -114,8 +116,8 @@ class _ExploreScreenState extends State<ExploreScreen>
                         Padding(
                           padding: const EdgeInsets.only(right: 4),
                           child: Container(
-                            height: 200,
-                            width: 330,
+                            height: screenHeight*0.25,
+                            width: screenWidth*0.85,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,

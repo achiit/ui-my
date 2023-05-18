@@ -18,13 +18,13 @@ class custom_appbar {
           ),
         )
       ],
-      title: const Column(
+      title: Column(
         children: [
           Row(
             children: [
               Text(
                 'Howdy Anupam Khosti !!',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ],
           ),
