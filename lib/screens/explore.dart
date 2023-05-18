@@ -1,6 +1,8 @@
 import 'package:assignment_netclan/widgets/custom_appbar.dart';
+import 'package:assignment_netclan/widgets/custom_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:anim_search_bar/anim_search_bar.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
@@ -21,7 +23,7 @@ class _ExploreScreenState extends State<ExploreScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
-    _tabController.animateTo(2);
+    _tabController.animateTo(0);
   }
 
   @override
@@ -31,11 +33,13 @@ class _ExploreScreenState extends State<ExploreScreen>
     return Scaffold(
       appBar: AppBar(
         bottom: TabBar(
+          indicatorColor: Colors.white,
+          indicatorSize: TabBarIndicatorSize.tab,
           controller: _tabController,
           tabs: const [
-            Icon(Icons.access_alarm),
-            Icon(Icons.access_alarm),
-            Icon(Icons.access_alarm),
+            Icon(Icons.people, color: Colors.white, size: 35,),
+            Icon(Icons.email, color: Colors.white, size: 35,),
+            Icon(Icons.house, color: Colors.white, size: 35,),
           ],
         ),
         leading: IconButton(
@@ -74,7 +78,7 @@ class _ExploreScreenState extends State<ExploreScreen>
                   padding: EdgeInsets.only(left: 5),
                   child: Text(
                     "Anand nagar, Pune",
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: TextStyle(color: Colors.white, fontSize: 13),
                   ),
                 ),
               ],
@@ -86,95 +90,47 @@ class _ExploreScreenState extends State<ExploreScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 10),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AnimSearchBar(
-                      onSubmitted: (value) {},
-                      width: 310,
-                      textController: textController,
-                      onSuffixTap: () {
-                        setState(
-                          () {
-                            textController.clear();
-                          },
-                        );
-                      },
-                    ),
-                    IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-                  ],
-                ),
-                Stack(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 4),
-                          child: Container(
-                            height: screenHeight*0.25,
-                            width: screenWidth*0.85,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              boxShadow: kElevationToShadow[2],
-                            ),
-                            alignment: Alignment.topRight,
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    TextButton.icon(
-                                      onPressed: () {},
-                                      icon: Icon(Icons.add, size: 15),
-                                      label: Text("INVITE"),
-                                    )
-                                  ],
-                                ),
-                                Container(
-                                  padding: EdgeInsets.only(left: 80),
-                                  alignment: Alignment.topLeft,
-                                  child: Column(
-                                    children: [
-                                      Text('Nikhil Wipra Das'),
-                                      Text('Nikhil Wipra Das'),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        SizedBox(height: 30),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Container(
-                              height: 80,
-                              width: 80,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.blueGrey.shade200,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 10),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AnimSearchBar(
+                        onSubmitted: (value) {},
+                        width: 310,
+                        textController: textController,
+                        onSuffixTap: () {
+                          setState(
+                            () {
+                              textController.clear();
+                            },
+                          );
+                        },
+                      ),
+                      IconButton(onPressed: () {}, icon: Icon(Icons.filter_alt)),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom :20.0),
+                    child: custom_stack(screenWidth: screenWidth),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom :20.0),
+                    child: custom_stack(screenWidth: screenWidth),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom :20.0),
+                    child: custom_stack(screenWidth: screenWidth),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom :20.0),
+                    child: custom_stack(screenWidth: screenWidth),
+                  ),
+                ],
+              ),
             ),
           ),
           Text('h1'),
@@ -184,3 +140,4 @@ class _ExploreScreenState extends State<ExploreScreen>
     );
   }
 }
+

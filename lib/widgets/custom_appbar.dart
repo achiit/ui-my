@@ -39,7 +39,7 @@ class custom_appbar {
                 padding: EdgeInsets.only(left: 5),
                 child: Text(
                   "Anand nagar, Pune",
-                  style: TextStyle(color: Colors.white, fontSize: 17),
+                  style: TextStyle(color: Colors.white, fontSize: 13),
                 ),
               ),
             ],

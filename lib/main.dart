@@ -59,25 +59,27 @@ class _MyHomePageState extends State<MyHomePage> {
           items: [
             BottomNavigationBarItem(
               icon: const Icon(
-                Icons.explore,
+                Icons.remove_red_eye_sharp,
+                //color: Color.fromARGB(255, 13, 48, 77),
               ),
-              label: activePageTitle,
+              label: "Explore",
               // backgroundColor: Colors.green,
             ),
             BottomNavigationBarItem(
               icon: const Icon(
-                Icons.refresh_outlined,
+                Icons.checklist,
+                //color: Color.fromARGB(255, 13, 48, 77),
               ),
-              label: activePageTitle,
+              label: "Refine",
             ),
           ],
           unselectedLabelStyle: const TextStyle(
             color: Colors.black,
           ),
-          unselectedItemColor: Colors.black,
-          fixedColor: Colors.black,
+          unselectedItemColor: Colors.blue.shade200,
           type: BottomNavigationBarType.shifting,
           iconSize: 34,
+          selectedItemColor: Color.fromARGB(255, 13, 48, 77),
           onTap: _onItemTapped,
           elevation: 5),
     );
