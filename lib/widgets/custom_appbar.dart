@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
-class custom_appbar extends StatelessWidget {
-  const custom_appbar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
+class custom_appbar {
+    static AppBar myAppBar() {
     return AppBar(
       leading: IconButton(
         icon: const Icon(Icons.menu),

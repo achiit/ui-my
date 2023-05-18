@@ -26,10 +26,7 @@ class _RefineScreenState extends State<RefineScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(55),
-        child: custom_appbar(),
-      ),
+      appBar: custom_appbar.myAppBar(),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
